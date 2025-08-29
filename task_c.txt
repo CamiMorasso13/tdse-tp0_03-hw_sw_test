@@ -1,0 +1,6 @@
+incluye librerias
+define variables amcro
+define data interna y externa
+define funciones externas:
+	- inicializa tarea e imprime
+	- actualiza tarea

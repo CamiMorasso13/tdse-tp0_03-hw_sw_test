@@ -1,0 +1,7 @@
+incluye librerias
+define variables macro
+// define funciones internas, data interna
+define data externa
+define funciones:
+	- inicializa tareas: correr e imprimir
+	- actualiza tarea

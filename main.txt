@@ -1,0 +1,10 @@
+#include "xxx.h" para añadir archivos de texto/binarios/bibliotecas
+prototipos de funciones privadas
+private user code
+main: 
+	inicializacion de flash, sistema de clock, perifericos
+	ciclo while con la actualizacion de la app
+	funcion de sistema de clock
+	funcion recibe void, devuelve void, para describir el serie
+	estructura GPIO junto a su configuracion
+	funcion error

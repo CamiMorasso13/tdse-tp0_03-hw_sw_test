@@ -1,0 +1,10 @@
+incluye librerias
+define variables globales
+define estructuras (TDA)
+define lista
+//define funciones internas
+define data interna y externa
+define funciones externas
+	- para inicializar, ejecutar
+	- actualizar
+	- actualiza tick
