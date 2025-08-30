@@ -1,10 +1,25 @@
+Configura un microcontrolador STM32F103 para:
+	Inicializar el sistema (HAL, reloj del sistema, periféricos)
+	Configurar el GPIO y el UART2
+	En el bucle principal:
+		Alternar el estado del LED LD2 
+		Esperar 500 ms (HAL_Delay(500))
+
 #include "xxx.h" para añadir archivos de texto/binarios/bibliotecas
-prototipos de funciones privadas
-private user code
-main: 
-	inicializacion de flash, sistema de clock, perifericos
-	ciclo while con la actualizacion de la app
-	funcion de sistema de clock
-	funcion recibe void, devuelve void, para describir el serie
-	estructura GPIO junto a su configuracion
-	funcion error
+Tipos de datos:
+	int → entero
+	uint8_t, uint32_t → enteros sin signo de 8 y 32 bits
+	void → no retorna nada
+	UART_HandleTypeDef → estructura para manejar el periférico UART
+	RCC_OscInitTypeDef y RCC_ClkInitTypeDef → estructuras para configurar el reloj
+	GPIO_InitTypeDef → estructura para configurar pines GPIO
+
+Prototipos de funciones privadas:
+	HAL_Init() → Inicializa HAL, NVIC y SysTick.
+	SystemClock_Config() → Configura el reloj principal (PLL, HCLK, PCLK1, PCLK2).
+	MX_GPIO_Init() → Configura los pines (LED, botón, interrupciones).
+	MX_USART2_UART_Init() → Inicializa USART2.
+	main()
+	Error_Handler() → entra en bucle infinito en caso de error
+	assert_failed() 
+

@@ -1,6 +1,10 @@
 incluye librerias
-define variables amcro
+define variables macro
 define data interna y externa
 define funciones externas:
 	- inicializa tarea e imprime
 	- actualiza tarea
+
+Tipos de datos: uint32_t, volatile uint32_t, bool, char*
+Estructuras de datos: contadores globales (g_task_c_cnt, g_task_c_tick_cnt)
+Métodos: task_c_init (setup, logging), task_c_update (consume ticks, actualiza contadores, ejecuta tareas periódicas).

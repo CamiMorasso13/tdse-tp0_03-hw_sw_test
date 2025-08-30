@@ -1,6 +1,11 @@
+Tarea no bloqueante 
+
 incluye librerias
-define variables amcro
+define variables macro
 define data interna y externa
 define funciones externas:
 	- inicializa tarea e imprime
 	- actualiza tarea
+
+Tipos de datos: uint32_t, char*, static uint32_t
+Métodos: task_b_init, task_b_update

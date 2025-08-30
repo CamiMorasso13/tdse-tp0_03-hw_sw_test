@@ -1,3 +1,5 @@
+Tarea Bloqueante
+
 incluye librerias
 define variables macro
 // define funciones internas, data interna
@@ -5,3 +7,6 @@ define data externa
 define funciones:
 	- inicializa tareas: correr e imprimir
 	- actualiza tarea
+
+Tipos de datos: uint32_t, char*, void*.
+Métodos: task_a_init (inicialización), task_a_update (lógica de la tarea).

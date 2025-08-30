@@ -1,0 +1,11 @@
+se ejecuta inmediatamente después de un reset y antes de entrar a la función main()
+Define la tabla de vectores de interrupción (g_pfnVectors) 
+Define el Reset_Handler, que realiza las tareas mínimas necesarias tras un reset
+Llama a SystemInit 
+Copia los datos inicializados de la Flash a la RAM (.data).
+Limpia la sección .bss (variables globales sin inicializar).
+Llama a __libc_init_array (constructores de objetos C++).
+Llama a main().
+Define un Default_Handler (interrupción por defecto (infinite loop))
+
+Estructuras Implícita: Vector Table (g_pfnVectors)
