@@ -1,0 +1,34 @@
+evolución de la variable SysTick y SystemCoreClock, desde Reset hasta ejecutar app_init():
+reset: se configura los valores por defecto de sus registros
+systemCoreClock: se inicializa con la frecuencia base configurada por el sistema
+se configura un tick periódico 
+hasta que se ejecuta app_init(), SysTick ya se encuentra activo, generando interrupciones que incrementan el contador global de tiempo del sistema
+
+evolución de la variable g_app_runtime_us, Application Runtime (microseconds), variable global de app_update():
+comienza en cero
+se incrementa en cada invocación de app_update()
+su valor depende del avance de SysTick o del temporizador utilizado
+g_app_runtime_us da una referencia del ttl
+
+evolución del campo WCET (Worst-Case Execution Time, microseconds) contenido en el array de estructuras de datos (dta) de tareas:
+cada tarea tiene en su estructura un campo WCET (peor tiempo de ejecución medido)
+comienza en cero
+cada vez que una tarea se ejecuta, se mide su tiempo real de ejecucion
+si el tiempo medido supera el valor almacenado en WCET, se actualiza con el nuevo valor más alto
+ WCET converge hacia el peor escenario real registrado para cada tarea
+
+impacto de usar LOGGER_INFO() en g_app_runtime_us:
+LOGGER_INFO(): implica operaciones adicionales (formateo de cadenas, acceso a buffers)
+introduce un retardo extra en la ejecución de app_update()
+el incremento de g_app_runtime_us refleja el tiempo real de ejecución de las tareas y el overhead del log
+el runtime medido es mayor al que tendría la aplicación sin logging
+
+impacto de usar LOGGER_INFO() en WCET de cada tarea:
+el tiempo de ejecución efectivo de la tarea se incrementa por el overhead del logging
+las mediciones de ejecución pueden mostrar valores más altos
+el WCET de esa tarea se ve afectado y puede registrar valores al tiempo agregado por las operaciones de log
+
+
+
+
+
